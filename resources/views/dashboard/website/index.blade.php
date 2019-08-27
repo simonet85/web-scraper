@@ -26,13 +26,13 @@
 						</tr>
 					@endforeach
 				</table>
-				@if(count($categories) > 0)
+				@if(count($websites) > 0)
 					<div class="pagination">
-						{{ $categories->render() }}
+						{{ $websites->render() }}
 					</div>
 				@endif
 				@else
-					<i>No categories found</i>
+					<i>No websites found</i>
 				@endif
 		</div>
 	</div>
