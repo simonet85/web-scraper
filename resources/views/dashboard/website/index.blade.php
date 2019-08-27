@@ -19,7 +19,7 @@
 							<td><img width="150" src="{{ url('uploads/' . $website->logo) }}" /></td>
 							<td><a href="{{ $website->url }}">{{ $website->url }}</a></td>
 							<td>
-								<a href="{{ url('dashboard/categories/' . $cat->id . '/edit') }}">
+								<a href="{{ url('dashboard/websites/' . $website->id . '/edit') }}">
 									<i class="glyphicon glyphicon-edit"></i>
 								</a>
 							</td>
@@ -28,7 +28,7 @@
 				</table>
 				@if(count($categories) > 0)
 					<div class="pagination">
-						<?php echo $categories->render(); ?>
+						{{ $categories->render() }}
 					</div>
 				@endif
 				@else
