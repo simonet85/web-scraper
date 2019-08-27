@@ -10,4 +10,16 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+	
+	function uploadFile($name, $destination, $request = null)
+	{
+		try {
+			$image = $request->file($name);
+			$fileName = time() . '.' . $image->getClientOriginalExtension();
+			$image->move($destination, $fileName);
+			return ["status" => 1, "filename" => $fileName];
+		} catch (\Exception $ex) {
+			return ["status" => 0, "filename" => ""];
+		}
+	}
 }
