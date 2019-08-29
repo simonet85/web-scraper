@@ -21,7 +21,9 @@ class LinksController extends Controller
     {
         $links = Link::orderBy('id', 'DESC')->paginate(10);
         $itemSchemas = ItemSchema::all();
-        return view('dashboard.link.index', [$links, $itemSchemas]);
+        return view('dashboard.link.index')
+                ->withLinks($links)
+                ->withItemSchemas($itemSchemas);
     }
 
     /**
@@ -33,7 +35,9 @@ class LinksController extends Controller
     {
         $categories = Category::all();
         $websites = Website::all();
-        return view('dashboard.link.create', [$categories, $websites]);
+        return view('dashboard.link.create')
+                ->withCategories($categories)
+                ->withWebsites($websites);
     }
 
     /**
@@ -152,7 +156,8 @@ class LinksController extends Controller
             return;
 
         $link = Link::find($request->link_id);
-        if (empty($link->main_filter_selector) && (empty($link->item_schema_id) || $link->item_schema_id == 0)) {
+        if (empty($link->main_filter_selector) && 
+            (empty($link->item_schema_id) || $link->item_schema_id == 0)) {
             return;
         }
 
