@@ -22,17 +22,6 @@ class CreateArticleTable extends Migration
 			$table->string('source_link', 355)->nullable();
 			$table->unsignedInteger('category_id')->nullable();
 			$table->unsignedInteger('website_id')->nullable();
-			$table->foreign('category_id')
-				->references('id')
-				->on('category')
-				->onUpdate('cascade')
-				->onDelete('set null');
-			$table->foreign('website_id')
-				->references('id')
-				->on('website')
-				->onUpdate('cascade')
-				->onDelete('set null');
-            $table->timestamps();
         });
     }
 
