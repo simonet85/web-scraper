@@ -4,13 +4,14 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h2>Item Schema</h2>
-			<a href="{{ route('item-schema.create') }}" class="btn btn-warning pull-right">Add new</a>
+			<a href="{{ route('item-schema.create') }}" class="btn btn-warning pull-right" style="margin-bottom: 10px">Add new</a>
 			@if(count($itemSchemas) > 0)
 				<table class="table table-bordered">
 					<tr>
 						<td>Title</td>
 						<td>CSS Expression</td>
 						<td>Is Full Url To Article</td>
+						<td>Full Content Selector</td>
 						<td>Actions</td>
 					</tr>
 					@foreach($itemSchemas as $item)

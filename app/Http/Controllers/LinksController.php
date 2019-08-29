@@ -112,7 +112,7 @@ class LinksController extends Controller
         $link->url = $request->input('url');
         $link->main_filter_selector = $request->input('main_filter_selector');
         $link->website_id = $request->input('website_id');
-        $link->category_id = $request->inputy('category_id');
+        $link->category_id = $request->input('category_id');
         $link->save();
 
         return redirect()->route('links.index');

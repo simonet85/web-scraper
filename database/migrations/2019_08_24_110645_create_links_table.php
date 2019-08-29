@@ -19,7 +19,8 @@ class CreateLinksTable extends Migration
 			$table->string('main_filter_selector'); // This is the main filter selector used in the main filter() function
 			$table->unsignedInteger('website_id')->nullable();
 			$table->unsignedInteger('category_id')->nullable();
-			$table->unsignedInteger('item_schema_id')->nullable();
+            $table->unsignedInteger('item_schema_id')->nullable();
+            $table->timestamps();
         });
     }
 
